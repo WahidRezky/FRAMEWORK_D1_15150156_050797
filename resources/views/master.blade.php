@@ -57,7 +57,7 @@
 				<li class="dropdown active">
 		<a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Pengaturan <span class="caret"></span></a>	
 			<ul class="dropdown-menu" aria-labelledby="dLabel">
-				<li><a href="{{url('pengguna')}}"> Pengguna</a></li>
+				<li><a href="{{url('Pengguna')}}"> Pengguna</a></li>
 				<li class="divider"></li>
 				<li><a href="{{url('ruangan')}}"> Ruangan</a></li>	
 				<li><a href="{{url('matakuliah')}}"> Matakuliah</a></li>	

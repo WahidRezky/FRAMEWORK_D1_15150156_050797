@@ -25,7 +25,7 @@ public function simpan(Request $input)
 	$pengguna->username = $input->username;
 	$pengguna->password = $input->password;
 	$informasi=$pengguna->save() ? 'Berhasil simpan data' : 'Gagal simpan data';
-	return redirect('pengguna')->with(['informasi'=>$informasi]);
+	return redirect('Pengguna')->with(['informasi'=>$informasi]);
 }
 
 public function edit($id)
@@ -46,7 +46,7 @@ public function update($id, Request $input)
 	$pengguna->username = $input->username;
 	$pengguna->password = $input->password;
 	$informasi=$pengguna->save() ? 'Berhasil update data' : 'Gagal update data';
-	return redirect('pengguna')->with(['informasi'=>$informasi]);
+	return redirect('Pengguna')->with(['informasi'=>$informasi]);
 }
 
 
@@ -54,6 +54,6 @@ public function hapus($id)
 {
 	$pengguna = Pengguna::find($id);
 	$informasi = $pengguna->delete() ? 'Berhasil hapus data' : 'Gagal hapus data';
-	return redirect('pengguna')->with(['informasi'=>$informasi]);
+	return redirect('Pengguna')->with(['informasi'=>$informasi]);
 }
 }
