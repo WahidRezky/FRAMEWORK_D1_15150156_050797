@@ -4,14 +4,20 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Dosen extends Model
+class dosen extends Model
 {
-    protected $table = 'Dosen';
-    protected $fillable = ['nama','nip','alamat','pengguna_id'];
+    protected $table='Dosen';
+    //digunakan untuk mendefinisikan nama tabel
+    // protected $fillable=['nama','nip','alamat','pengguna_id'];
+    
+    public function pengguna(){// fungsi dengan nama pengguna
 
-    {
-    	public function doesn matakuliah(){
-    		return $this->hasMany(DosenMatakuliah::class);
-    	}
+    	return $this->belongsTo(pengguna::class);// fungsi pengguna yang mempunyai nilai return dari fungsi belongsTo yang merelasikan tabel pengguna dengan model dosen
     }
+    
+
+    public function dosen_matakuliah(){ // fungsi dengan nama dosen_matakuliah
+    	return $this->hasMany(dosen_matakuliah::class);// model dosen_matakuliah yang mempunyai nilai return dari fungsi hasMany yang merelasikan dosen dengan banyak dosen_matakuliah dengan dosen_id sebagai foreign key nya
+    }
+    
 }
