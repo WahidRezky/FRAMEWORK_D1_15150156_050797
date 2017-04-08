@@ -6,19 +6,21 @@ use Illuminate\Database\Eloquent\Model;
 
 class jadwal_matakuliah extends Model
 {
-    //
-    protected $table='jadwal_matakuliah';// mendeklarasikan tabel jadwal_matakuliah
-    // protected $fillable=['mahasiswa_id','ruangan_id','dosen_matakuiah_id'];
-    
-    public function dosen_matakuliah(){ // fungsi dengan nama dosen_matakuliah
-    	return $this->belongsTo(Dosen_matakuliah::class);// memberikan nilai return dari fungsi belongsTo yang merelasikan dosen_matakuliah dengan banyak jadwal_Matakuliah
-    } 
+  protected $table = 'jadwal_matakuliah';
+  protected $fillable = ['mahasiswa_id','ruangan_id','dosen_matakuliah_id'];
 
-    public function ruangan(){  // fungsi dengan nama ruangan
-		return $this->belongsTo(Ruangan::class); // memberikan nilai return dari fungsi belongsTo yang mrelasikan ruangan dengan banyak jadwal_matakuliah
-    }
+  public function mahasiswa()
+  {
+  	return $this->belongsTo(mahasiswa::class);
+  }
 
-    public function mahasiswa(){ // fungsi dengan nama mahasiswa
-    	return $this->belongsTo(Mahasiswa::class); // memberikan nilai return dari fungsi belongsTo yang merelasikan banyak jadwal_matakuliah dengan mahasiswa
-    }
+  public function ruangan()
+  {
+  	return $this->belongsTo(ruangan::class);
+  }
+
+  public function dosen_matakuliah()
+  {
+  	return $this->belongsTo(dosen_matakuliah::class);
+  }
 }

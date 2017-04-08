@@ -4,15 +4,26 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class pengguna extends Model
+class Pengguna extends Model
 {
-    //
-    protected $table='Pengguna';// mendeklarasikan tabel pengguna
-    	// protected $fillable=['username','password'];
-    public function mahasiswa(){// fungsi dengan nama mahasiswa
-    	return $this->hasOne(mahasiswa::class,'pengguna_id');// memberikan nilai return dari fungsi hasOne yang merelasikan pengguna dengan mahasiswa dengan foreign ket pengguna_id
-    }
-    public function dosen(){// fungsi dengan nama dosen
-    	return $this->hasOne(dosen::class,'pengguna_id');// memberikan nilai return dari fungsi hasOne yang merelasikan pengguna dengan dosen dengan foreign key pengguna_id
-    }
+
+    protected $table = 'pengguna';
+
+ protected $guarded=['id'];    
+    //protected $fillable = ['username','password'];
+
+
+    public function mahasiswa(){  
+
+    	return $this->hasOne(Mahasiswa::class) ;
+    } 
+
+    public function dosen(){  
+		
+        return $this->hasOne(Dosen::class); 
+	}
+	
+	//public function peran(){
+	//return $this->belongsToMany(Peran::class);
+	// }
 }
