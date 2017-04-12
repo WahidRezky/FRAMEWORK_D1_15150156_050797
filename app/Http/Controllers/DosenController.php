@@ -25,7 +25,7 @@ class dosenController extends Controller
 
 /* public function awal()
     {
-    	return "-- SELAMAT DATANG DI dosen CONTROLLER --";
+    	return "SELAMAT DATANG DI dosen CONTROLLER";
     }
 public function tambah()
 {

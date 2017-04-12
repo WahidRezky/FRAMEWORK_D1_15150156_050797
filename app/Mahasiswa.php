@@ -13,17 +13,26 @@ class Mahasiswa extends Model
 
     
 
-    public function pengguna() { 
+    public function pengguna() 
+    { 
    
     	return $this->belongsTo(Pengguna::class); 
     }
-    
-    public function jadwal_matakuliah(){ 
-
-        return $this->hasMany(JadwaL_matakuliah::class); 
+ public function jadwal_matakuliah() 
+    { 
+   
+        return $this ->hasMany(jadwal_matakuliah::class); 
     }
-
-    public function getUsernameAttribute(){
+    public function getUsernameAttribute()
+    {
     	return $this->pengguna->username;
+    }
+    public function listMahasiswadanNim()
+    {
+        $out = [];
+        foreach ($this->all() as $mhs){
+            $out[$mhs->id] = "{$mhs->nama} ({$mhs->nim})";
+        }
+        return $out;
     }
 }

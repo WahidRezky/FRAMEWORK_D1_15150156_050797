@@ -25,7 +25,7 @@ class MahasiswaController extends Controller
 
    //public function awal()
     //{
-    	//return "-- SELAMAT DATANG DI MAHASISWA CONTROLLER --";
+    	//return "SELAMAT DATANG DI MAHASISWA CONTROLLER";
     //}
 //public function tambah()
 //{
@@ -34,9 +34,9 @@ class MahasiswaController extends Controller
 //public function simpan()
 //{
 	//$mahasiswa = new Mahasiswa();
-	//$mahasiswa->nama = 'Olivia Angelica';
-	//$mahasiswa->nim = '1515015091';
-	//$mahasiswa->alamat = 'jl. nusantara 4';
+	//$mahasiswa->nama = 'Muhammad Wahid Rezky';
+	//$mahasiswa->nim = '1515015156';
+	//$mahasiswa->alamat = 'jl. perjuangan 9';
 	//$mahasiswa->pengguna_id = '2';
 	//$mahasiswa->save();
 	//return " ---> Data mahasiswa dengan nama {$mahasiswa->nama} telah disimpan <---";

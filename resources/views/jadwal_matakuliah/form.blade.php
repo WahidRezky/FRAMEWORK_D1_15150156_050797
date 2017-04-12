@@ -5,9 +5,9 @@
 		</div>
 	</div>
 	<div class="form-group">
-		<label class="col-sm-2 control-label" id="dosen_matakuliah_id"> Matkuliah</label>
+		<label class="col-sm-2 control-label" id="dosen_matakuliah_id">matakuliah</label>
 		<div class="col-sm-10">
-			{!! Form::select('dosen_matkuliah_id',$dosen_matakuliah->listDosenDanMatakuliah(),null,['class'=>'form-control','id'=>'dosen_matkuliah_id','placeholder'=>"Matkuliah"]) !!}
+			{!! Form::select('dosen_matakuliah_id',$dosen_matakuliah->listDosenDanMatakuliah(),null,['class'=>'form-control','id'=>'dosen_matakuliah_id','placeholder'=>"matakuliah"]) !!}
 		</div>
 	</div>
 	<div class="form-group">

@@ -6,17 +6,17 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-use App\jadwal_matakuliah;
+use App\Jadwal_matakuliah;
 
-use App\mahasiswa;
+use App\Mahasiswa;
 
-use App\dosen_matakuliah;
+use App\Dosen_matakuliah;
 
-use App\ruangan;
+use App\Ruangan;
 
 class jadwal_matakuliahController extends Controller
 {
-   protected $guarded =['id'];
+   
    
    protected $informasi = 'Gagal melakukan aksi';
   
@@ -34,6 +34,7 @@ class jadwal_matakuliahController extends Controller
    }
    public function simpan(Request $input)
    {
+      // dd($input->mahasiswa_id);
    	$jadwal_matakuliah = new jadwal_matakuliah($input->only('ruangan_id','dosen_matakuliah_id','mahasiswa_id'));
    	if($jadwal_matakuliah->save()) $this->informasi = "Jadwal mahasiswa berhasil disimpan ";
       return redirect('jadwal_matakuliah')->with(['informasi' => $this->informasi]);
