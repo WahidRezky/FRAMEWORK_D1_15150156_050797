@@ -22,7 +22,7 @@ class Dosen extends Model
    	}
    	public function getUseraNameAtribute()
    	{
-   		return $this->hasMany(dosen_matakuliah::class);
+   		return $this->pengguna->username;
    	}
    	public function listDosenDanNip()
    	{

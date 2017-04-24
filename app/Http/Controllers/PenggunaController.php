@@ -26,6 +26,10 @@ public function simpan(Request $input)
 	$pengguna->password = $input->password;
 	$informasi=$pengguna->save() ? 'Berhasil simpan data' : 'Gagal simpan data';
 	return redirect('Pengguna')->with(['informasi'=>$informasi]);
+	$this->validate($input,[
+	'username'=>'required',
+	'password'=>'required',
+	]);
 }
 
 public function edit($id)
@@ -55,5 +59,6 @@ public function hapus($id)
 	$pengguna = Pengguna::find($id);
 	$informasi = $pengguna->delete() ? 'Berhasil hapus data' : 'Gagal hapus data';
 	return redirect('Pengguna')->with(['informasi'=>$informasi]);
+
 }
 }

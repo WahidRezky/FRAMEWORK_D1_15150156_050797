@@ -90,3 +90,46 @@ Route::post('jadwal_matakuliah/simpan','Jadwal_matakuliahController@simpan');
 Route::get('jadwal_matakuliah/edit/{jadwal_matakuliah}','Jadwal_matakuliahController@edit');
 Route::post('jadwal_matakuliah/edit/{jadwal_matakuliah}','Jadwal_matakuliahController@update');
 Route::get('jadwal_matakuliah/hapus/{jadwal_matakuliah}','Jadwal_matakuliahController@hapus');
+
+Route::get('ujiHas','RelationshipRebornController@ujiHas');
+Route::get('ujiDoesntHave','RelationshipRebornController@ujiDoesntHave');
+
+Route::get('/',function()
+{
+	return \App\DosenMatakuliah::whereHas('dosen',function($query)
+	{
+		$query->where('nama','like','%5%');
+	})->with('dosen')->groupBy('dosen_id')->get();
+});
+
+/* Route::get('/',function()
+{
+	return \App\DosenMatakuliah::whereHas('dosen',function($query)
+	{
+		$query->where('nama','like','%5%');
+		})
+	->orWhereHas('matakuliah',function($kueri))
+})
+->with('dosen','matakuliah')
+->groupBy('dosen_id')
+->get();
+});*/
+
+Route::get('/', function(Illuminate\Http\Request $request)
+{
+	echo "ini adalha request dari method get".$request->nama;
+	});
+
+use Illuminate\Http\Request;
+Route::get('/', function()
+{
+	echo Form::open(['url'=>'/']).
+		 Form::label('nama').
+		 Form::text('nama',null).
+		 Form::submit('kirim').
+		 Form::close();
+});
+Route::post('/',function(Request $request)
+{
+	echo "Hasil dari form  input tadi nama : ".$request->nama;
+});

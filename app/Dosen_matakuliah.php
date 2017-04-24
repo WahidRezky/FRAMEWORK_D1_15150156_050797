@@ -13,10 +13,10 @@ class dosen_matakuliah extends Model
    	return $this->belongsTo(dosen::class);
    }
 
-   public function jadwal_matakuliah()
-   {
-   	return $this->hasMany(jadwal_matakuliah::class);
-   }
+  // public function jadwal_matakuliah()
+   //{
+   	//return $this->hasMany(jadwal_matakuliah::class);
+   //}
 
    public function matakuliah()
    {
